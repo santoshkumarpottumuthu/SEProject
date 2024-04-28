@@ -97,7 +97,7 @@ export class EditprofileComponent implements OnInit {
     };
  
 
-    this.http.post('http://localhost:8080/getCustomer', cred)
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/getCustomer', cred)
       .subscribe((data: any) => {
         this.userData = data[200];
         this.customerData = this.userData.customer;
@@ -171,7 +171,7 @@ export class EditprofileComponent implements OnInit {
       this.customerData.password = this.newPassword;
       
       // Send a POST request to change the password
-      this.http.post('http://localhost:8080/changePassword', {
+      this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/changePassword', {
         email: this.customerData.email,
         password: this.newPassword
       }).subscribe((response) => {
@@ -210,7 +210,7 @@ export class EditprofileComponent implements OnInit {
     //   // billingAddress: updatedBillingData,
     //   // address: updatedAddressData
     // };
-    this.http.post('http://localhost:8080/updateCustomer', updatedUserData).subscribe((response) => {
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/updateCustomer', updatedUserData).subscribe((response) => {
       // Handle the response or show a success message
       this.isSaveSuccessful = true;
       this.fetchUserData();
@@ -223,7 +223,7 @@ export class EditprofileComponent implements OnInit {
 
     const addCardDet = this.userCardDetails.value;
    addCardDet.userID = this.cardUserID;
-    this.http.post('http://localhost:8080/addCard', addCardDet)
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/addCard', addCardDet)
     .subscribe((data: any) => {
       if(data[200])
       {
@@ -262,7 +262,7 @@ export class EditprofileComponent implements OnInit {
     //   billingAddress: updatedBillingData,
     //   address: updatedAddressData
     // };
-    this.http.post('http://localhost:8080/updateCard', updatedCardData).subscribe((response) => {
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/updateCard', updatedCardData).subscribe((response) => {
       // Handle the response or show a success message
       console.log("Card Details Updated ", response);
       this.isSaveSuccessful = true;
@@ -286,7 +286,7 @@ export class EditprofileComponent implements OnInit {
 
     //   cardDetails: updatedPaymentData,
     // };
-    this.http.post('http://localhost:8080/deleteCard', deletedCard).subscribe((response) => {
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/deleteCard', deletedCard).subscribe((response) => {
       // Handle the response or show a success message
       console.log("Deleted Card Response", response);
       this.isSaveSuccessful = true;
