@@ -18,7 +18,12 @@ export class AuthGuard implements CanActivate {
       return true;
     } else {
       // Redirect to the login page if not authenticated
+      console.log("Returning admin log page")
       this.router.navigate(['/admin/login']);
+      // this.router.navigate(['admin/manage/movies']);
+      // this.router.navigate(['admin/deletemovies']);
+      // this.router.navigate(['admin/manage/promotions']);
+      // this.router.navigate(['admin/manage/users']);
       return false;
     }
   }

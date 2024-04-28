@@ -36,7 +36,7 @@ export class AdminmanageusersComponent implements OnInit {
   }
   getUsers()
   {
-    this.http.get('http://localhost:8080/getAllcustomers').subscribe((response : any) =>{
+    this.http.get('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/getAllcustomers').subscribe((response : any) =>{
       this.userData = response;
     });
   }

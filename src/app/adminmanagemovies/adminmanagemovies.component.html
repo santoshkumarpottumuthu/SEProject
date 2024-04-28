@@ -36,7 +36,7 @@
           <form  (ngSubmit)="updateMovie()"  class="addMovieForm">
             <!-- Movie Title -->
             <div class="mb-3">
-              <label for="movieTitle" class="labelTag">Movie Title</label>
+              <label for="movieTitle" class="labelTag">Movie Title <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="movieTitle"
@@ -47,7 +47,7 @@
     
             <!-- Movie Cast -->
             <div class="mb-3">
-              <label for="movieCast" class="labelTag">Movie Cast</label>
+              <label for="movieCast" class="labelTag">Movie Cast <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="movieCast"
@@ -57,7 +57,7 @@
     
             <!-- Movie Category -->
             <div class="mb-3">
-              <label for="movieCategory" class="labelTag">Movie Category</label>
+              <label for="movieCategory" class="labelTag">Movie Category <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="movieCategory"
@@ -67,7 +67,7 @@
     
             <!-- Movie Director -->
             <div class="mb-3">
-              <label for="movieDirector" class="labelTag">Movie Director</label>
+              <label for="movieDirector" class="labelTag">Movie Director <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="movieDirector"
@@ -77,7 +77,7 @@
     
             <!-- Movie Producer -->
             <div class="mb-3">
-              <label for="movieProducer" class="labelTag">Movie Producer</label>
+              <label for="movieProducer" class="labelTag">Movie Producer <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="movieProducer"
@@ -117,7 +117,7 @@
     
             <!-- Release Date -->
             <div class="mb-3">
-              <label for="releaseDate" class="labelTag">Release Date</label>
+              <label for="releaseDate" class="labelTag">Release Date <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="date"
                 id="releaseDate"
@@ -128,7 +128,7 @@
     
             <!-- Synopsis -->
             <div class="mb-3">
-              <label for="synopsis" class="labelTag">Synopsis</label>
+              <label for="synopsis" class="labelTag">Synopsis  <span class="mandatory">*</span></label>
               <textarea class="form-control" 
                 id="synopsis"
                 name="synopsis"
@@ -139,17 +139,17 @@
     
             <!-- Reviews -->
             <div class="mb-3">
-              <label for="reviews" class="labelTag">Reviews</label>
+              <label for="reviews" class="labelTag">Reviews </label>
               <textarea class="form-control" 
                 id="reviews"
                 name="reviews"
                 [(ngModel)]="movieFormData.reviews"
               ></textarea>
-              
+                
             </div>
             <!-- Language -->
             <div class="mb-3">
-              <label for="language" class="labelTag">Movie Language</label>
+              <label for="language" class="labelTag">Movie Language <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="language"
@@ -161,7 +161,7 @@
     
             <!-- Trailer Link -->
             <div class="mb-3">
-              <label for="trailerLink" class="labelTag">Trailer Link</label>
+              <label for="trailerLink" class="labelTag">Trailer Link <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="trailerLink"
@@ -173,7 +173,7 @@
     
             <!-- Film Rating Code -->
             <div class="mb-3">
-              <label for="filmRatingCode" class="labelTag">Film Rating Code</label>
+              <label for="filmRatingCode" class="labelTag">Film Rating Code <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="filmRatingCode"
@@ -184,7 +184,7 @@
     
             <!-- Rating -->
             <div class="mb-3">
-              <label for="rating" class="labelTag">Rating</label>
+              <label for="rating" class="labelTag">Rating <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="number"
                 id="rating"
@@ -195,7 +195,7 @@
             </div>
             <!-- Movie Availability Dropdown -->
             <div class="mb-3">
-              <label for="movieAvailability" class="labelTag">Movie Availability</label>
+              <label for="movieAvailability" class="labelTag">Movie Availability <span class="mandatory">*</span></label>
               <select class="form-control" id="movieAvailability" name="movieAvailability" [(ngModel)]="movieFormData.movieAvailability">
                 <option value="CURRENTLY_RUNNING">Currently Playing</option>
                 <option value="COMING_SOON">Coming Soon</option>
@@ -206,7 +206,7 @@
 
             <!-- Poster Source -->
             <div class="mb-3">
-              <label for="posterSrc" class="labelTag">Poster Source</label>
+              <label for="posterSrc" class="labelTag">Poster Source <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="posterSrc"
@@ -218,7 +218,7 @@
     
         <!-- Banner Source -->
             <div class="mb-3">
-              <label for="bannerSrc" class="labelTag">Banner Source</label>
+              <label for="bannerSrc" class="labelTag">Banner Source <span class="mandatory">*</span></label>
               <input class="form-control"
                 type="text"
                 id="BannerSrc"

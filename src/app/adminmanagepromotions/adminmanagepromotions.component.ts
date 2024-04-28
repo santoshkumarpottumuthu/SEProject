@@ -35,6 +35,7 @@ export class AdminmanagepromotionsComponent implements OnInit {
       (response: any) => {
         console.log("Promotion successfully deleted", response);
         this.getAllPromotions();
+        alert("Succesfully deactivated the promotion code!")
         this.router.navigate(['/admin/home']);
       },
       (error) => {

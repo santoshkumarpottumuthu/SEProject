@@ -60,7 +60,7 @@ export class ForgotpasswordComponent implements OnInit {
     // confirmationData.verificationCode = this.verificationCode;
     console.log("Verification Code", this.verificationCode);
     console.log("confirmationData", confirmationData);
-    this.http.post('http://localhost:8080/verifyCustomer', confirmationData).subscribe(
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/verifyCustomer', confirmationData).subscribe(
       (response: any) => {
         this.verificationUnSuccessful = false;
         this.router.navigate(['/resetPassword']);

@@ -45,21 +45,25 @@ export class AdminaddpromotionComponent implements OnInit {
   addNewPromotion()
   {
     const finalFormData = this.addPromoForm.value;
+
     console.log("Form Data:", finalFormData); // Log the form data to check if it's captured properly
     this.loading = true;
     this.appService.addNewPromotion(finalFormData).subscribe(
       (response: any) => {
+        console.log("Response is "+response);
         if(response[200])
         {
           this.loading = false;
           console.log("Added promo to DB", response);
-        this.router.navigate(['/admin/home']);
+          alert("Succesfully added the promotion!")
+          this.router.navigate(['/admin/home']);
         }
         else
         {
           this.loading = false;
           this.promoAlreadyExistsPop = true;
           this.promoErrorMessage = "Promotion already exists!"
+          alert(this.promoErrorMessage)
         }
         
       },

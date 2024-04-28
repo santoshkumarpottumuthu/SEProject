@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthserviceComponent {
-  private apiUrl = 'http://localhost:8080'; 
+  private apiUrl = 'https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com'; 
 
   constructor(private http: HttpClient) { }
 

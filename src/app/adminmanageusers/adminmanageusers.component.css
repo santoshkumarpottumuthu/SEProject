@@ -49,6 +49,7 @@ text-align: left;
 }
 .col-md-4 a{
   cursor: pointer;
+  padding-left: 65%;
 }
 
 .editMoviePopup {

@@ -303,17 +303,17 @@ export class BuyTicketsComponent {
 
 
 getTicketType(): string {
-  const remainingAdultCount = this.adultCount - this.tickets.filter(t => t.ticketType === 'Adult').length;
-  const remainingChildCount = this.childCount - this.tickets.filter(t => t.ticketType === 'Child').length;
+  const remainingAdultCount = this.adultCount - this.tickets.filter(t => t.ticketType === 'ADULT').length;
+  const remainingChildCount = this.childCount - this.tickets.filter(t => t.ticketType === 'CHILD').length;
 
   // Randomly decide whether to assign the seat to an adult or child based on remaining counts
   if (remainingAdultCount > 0 && remainingChildCount > 0) {
     const isAdult = Math.random() > 0.5; // Adjust the threshold for your preference
 
-    return isAdult ? 'Adult' : 'Child';
+    return isAdult ? 'ADULT' : 'CHILD';
   } else {
     // If there are no more remaining tickets for one type, assign the seat to the other type
-    return remainingAdultCount > 0 ? 'Adult' : 'Child';
+    return remainingAdultCount > 0 ? 'ADULT' : 'CHILD';
   }
 }
 
@@ -439,7 +439,7 @@ saveTickets() {
     ticketsFormArray.push(ticketGroup);
 
     // Update the total price based on the ticket type
-    if (ticketType === 'Adult') {
+    if (ticketType === 'ADULT') {
       totalAdultPrice += ticketPrice;
     } else {
       totalChildPrice += ticketPrice;
@@ -469,7 +469,7 @@ calculateTicketPrice(ticketType: string): number {
   const totalChildPrice = this.childCount * childTicketPrice;
 
   // Return the price for the new ticket based on ticket type
-  return ticketType === 'Adult' ? adultTicketPrice : childTicketPrice;
+  return ticketType === 'ADULT' ? adultTicketPrice : childTicketPrice;
 }
 
 

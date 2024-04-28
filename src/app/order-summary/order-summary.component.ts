@@ -13,14 +13,14 @@ export class OrderSummaryComponent {
       movieTitle: 'Avengers: Endgame',
       showTime: 'Show Time 1',
       seat: 'A1',
-      age: 'Adult',
+      age: 'ADULT',
       price: '$12'
     },
     {
       movieTitle: 'Avengers: Endgame',
       showTime: 'Show Time 1',
       seat: 'A2',
-      age: 'Child',
+      age: 'CHILD',
       price: '$8'
     }
   ];

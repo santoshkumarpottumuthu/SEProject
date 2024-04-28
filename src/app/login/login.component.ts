@@ -57,7 +57,7 @@ export class LoginComponent {
       "verificationCode": null
     };
 
-    this.httpClient.post('http://localhost:8080/getCustomer', cred).subscribe(
+    this.httpClient.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/getCustomer', cred).subscribe(
       (response: any) => {
         if (response[200]) 
         {
@@ -138,7 +138,7 @@ export class LoginComponent {
     confirmationData.verificationCode = this.verificationCode;
     console.log("Verification Code", this.verificationCode);
     console.log("confirmationData", confirmationData);
-    this.httpClient.post('http://localhost:8080/verifyCustomer', confirmationData).subscribe(
+    this.httpClient.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/verifyCustomer', confirmationData).subscribe(
       (response: any) => {
         console.log('Email confirmation successful', response);
         this.verificationUnSuccessful = false;

@@ -283,7 +283,7 @@ export class SignupComponent implements OnInit {
     console.log("confirmationData", confirmationData);
     console.log("Payment Card Form", this.paymentForm);
     // console.log("Address Form", this.addressForm);
-    this.http.post('http://localhost:8080/verifyCustomer', confirmationData).subscribe(
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/verifyCustomer', confirmationData).subscribe(
       (response: any) => {
         if(response[200])
         {

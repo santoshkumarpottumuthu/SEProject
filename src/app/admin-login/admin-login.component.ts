@@ -34,7 +34,7 @@ export class AdminLoginComponent {
       "password": this.password,        
     };
 
-    this.http.post('http://localhost:8080/getAdmin', cred).subscribe(
+    this.http.post('https://movie-booking-backend-dbc9c6a9b35f.herokuapp.com/getAdmin', cred).subscribe(
       (response: any) => {
         if (response) {
           this.isLoginSuccessful = true;
