@@ -1,12 +1,15 @@
+/* Import swiper bundle CSS */
 @import 'swiper/swiper-bundle.min.css';
-:host{
-.movieSwipper
-{
+
+/* Host styles */
+:host {
+  .movieSwipper {
     overflow-x: hidden;
-}
-.swiper-pagination {
+  }
+  
+  .swiper-pagination {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -14,9 +17,8 @@
     height: 20px;
   }
 
-.swiper-pagination-bullet
-{
-    display: inline-flex ;
+  .swiper-pagination-bullet {
+    display: inline-flex;
     width: 10px;
     height: 10px;
     background-color: #fff;
@@ -27,8 +29,7 @@
     transition: background-color 0.3s ease-in-out;
   }
 
-.swiper-pagination-bullet-active
-{
+  .swiper-pagination-bullet-active {
     display: inline-flex;
     width: 10px;
     height: 10px;
@@ -39,24 +40,23 @@
     transition: background-color 0.3s ease-in-out;
   }
 
-/* Style the swiper container */
-.swiper-container {
+  /* Style the swiper container */
+  .swiper-container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
   }
-  
+
   /* Style individual swiper slides */
-.swiper-slide {
+  .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     border-radius: 8px;
   }
-  
-  
+
   /* Add styles for navigation buttons */
   .swiper-button-prev,
   .swiper-button-next {
@@ -72,21 +72,19 @@
     line-height: 30px;
     cursor: pointer;
   }
-  
+
   .swiper-button-prev {
     left: 10px;
   }
-  
+
   .swiper-button-next {
     right: 10px;
   }
-  
-  .movieBannerImg
-  {
+
+  /* Additional styles for movie banner image */
+  .movieBannerImg {
     width: 100%;
-  border-radius: 5px;
-  height: 340px;
+    border-radius: 5px;
+    height: 340px;
   }
-
-
 }
