@@ -62,8 +62,8 @@
 
 .searchBar {
   background: #FFF;
-  box-shadow: 1px 1px 3px 2px #c1d8e6;
-  width: 480px;
+  box-shadow: 1px 1px 3px 2px #040a0d;
+  width: 1500px;
   padding: 6px 10px;
   border-radius: 10px;
   color: #011631; /* Purple-black */
@@ -130,18 +130,13 @@
 }
 
 .nowShowingPoster {
-  width: 230px;
-  height: 310px;
+  width: 100%; /* Set width to 100% to fill the container */
+  height: 100%; /* Set height to 100% to fill the container */
+  object-fit: cover; /* Scale the image to cover the entire container while maintaining aspect ratio */
   border-radius: 5px;
 }
 
-.nowShowingCards {
-  border: 1px solid #011631; /* Purple-black */
-  border-radius: 5px;
-  padding: 5px 10px;
-  box-shadow: 1px 1px 3px 2px #c1d8e6;
-  color: #011631; /* Purple-black */
-}
+
 
 .bookTicketBtn {
   background-color: #011631; /* Purple-black */
@@ -154,15 +149,18 @@
 }
 
 .movieInfo {
-  margin-top: 10px;
+  margin-top: 20px; /* Increase top margin for spacing */
+  margin-bottom: 20px; /* Increase bottom margin for spacing */
   text-align: left;
 }
 
 .movieInfo p {
-  margin: 0;
+  margin: 10px 0; /* Increase vertical margin for spacing between paragraphs */
   font-weight: 600;
   text-align: left;
+  font-size: 18px;
 }
+
 
 .movieTitle {
   font-weight: 900 !important;
@@ -204,23 +202,16 @@
 .bookTicketBtn {
   background-color: #011631; /* Purple-black */
   color: #FFF;
-  padding: 8px 10px;
+  padding: 12px 20px; /* Increase padding */
   font-weight: 500;
   border: unset;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 20px; /* Increase top margin */
+  font-size: 16px; /* Increase font size */
+  height: 50px; /* Increase button height */
 }
 
-.movieInfo {
-  margin-top: 10px;
-  text-align: left;
-}
 
-.movieInfo p {
-  margin: 0;
-  font-weight: 600;
-  text-align: left;
-}
 
 .movieTitle {
   font-weight: 900 !important;
@@ -290,3 +281,20 @@
   margin-left: 5px;
   cursor: pointer;
 }
+
+.nowShowingCards {
+  border: 1px solid #a0b3e2; /* Purple-black */
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+  box-shadow: 1px 1px 3px 2px rgba(15, 1, 1, 0.3); /* Initial shadow */
+}
+
+.nowShowingCards:hover {
+  box-shadow: 5px 5px 15px 5px rgba(15, 1, 1, 0.6); /* Heavier shadow on hover */
+}
+
+.nowShowingCards:active {
+  box-shadow: 5px 5px 20px 5px rgba(15, 1, 1, 0.8); /* Adjusted shadow for active state */
+}
+

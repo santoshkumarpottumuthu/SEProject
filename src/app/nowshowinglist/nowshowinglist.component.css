@@ -21,6 +21,12 @@
     box-shadow: 1px 1px 3px 2px #c1d8e6;
 }
 
+.nowShowingCards:hover,
+.nowShowingCards:active {
+    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3); /* Adjust shadow properties as needed */
+}
+
+
 :host ::ng-deep .width24per {
     width: 24%;
     margin-left: 5px;
@@ -54,3 +60,6 @@
 .movieTitle {
     font-weight: 900 !important;
 }
+
+
+
