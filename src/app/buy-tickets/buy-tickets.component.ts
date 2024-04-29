@@ -407,9 +407,11 @@ onProceedToCheckout() {
     this.showReviewOrderPopup = false;
     this.showCantCheckoutPopup = true;
     console.log("Cannot continue")
+    console.log("Setting the value");
+    localStorage.setItem("redirectToCheckOutOnLogin",'true');
   }
   else
-  {
+  { 
     this.router.navigate(['/checkout']);
   }
 

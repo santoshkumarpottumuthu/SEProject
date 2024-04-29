@@ -66,7 +66,15 @@ export class LoginComponent {
           {
             this.verificationUnSuccessful = false;
             this.isLoginSuccessful = true;
-            this.router.navigate(['/home']);
+            if(localStorage.getItem("redirectToCheckOutOnLogin") === "true"){
+              console.log("Redirecting the user to checkout from login");
+              localStorage.removeItem("redirectToCheckOutOnLogin");
+              this.router.navigate(['/checkout']);
+            }
+            else{
+              this.router.navigate(['/home']);
+            }
+            
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('userFirstName', response[200].customer.firstName);
             localStorage.setItem('userLastName', response[200].customer.lastName);
