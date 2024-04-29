@@ -219,13 +219,17 @@
                 id="exampleCheck1"
               />
               <br />
-              <button
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button class="saveBtn" (click)="goHome()" matTooltip="Go to home page!">Return Home</button>
+                <button type="submit" class="saveBtn" matTooltip="Finalize changes!">Save Changes</button>
+              </div>
+              <!-- <button
                 type="submit"
                 class="saveBtn"
                 matTooltip="Finalize changes!"
               >
                 Save Changes
-              </button>
+              </button> -->
             </form>
             <div *ngIf="isSaveSuccessful" class="confirmation-modal">
               <div class="confirmation-content">

@@ -294,4 +294,8 @@ export class EditprofileComponent implements OnInit {
       this.navigateToEditProfile();   
      });
   }
+
+  goHome() {
+    this.router.navigate(['/admin/home']);
+  }
 }
