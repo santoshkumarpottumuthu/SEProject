@@ -13,7 +13,6 @@
   filter: blur(5px); /* Adjust blur intensity as needed */
 }
 
-
 /* General Reset */
 * {
   box-sizing: border-box;
@@ -292,18 +291,6 @@ margin-top: 10px !important;
   text-align: center;
   position: relative;
 }
-
-.dimmed-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  z-index: 10; /* Lower than popup but higher than other content */
-  display: none; /* Hidden by default */
-}
-
 .addCardPopup
 {
   z-index: 9999;
@@ -313,10 +300,6 @@ margin-top: 10px !important;
   height: auto;
   width: 71%;
   background: #fff;
-}
-
-.show-dimmed-background {
-  display: block;
 }
 
 .cardDetails {
