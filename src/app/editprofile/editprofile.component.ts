@@ -119,10 +119,17 @@ export class EditprofileComponent implements OnInit {
     localStorage.setItem('editIndexID', toggleID);
     this.showCardDetails[toggleID] = !this.showCardDetails[toggleID];
   }
+  // toggleAddCardDetails() {
+  //   console.log("Inside Toogle ",this.showAddCardDetails)
+  //   this.showAddCardDetails = !this.showAddCardDetails;
+  //   console.log("After toogling", this.showAddCardDetails);
+  //   this.addCardError = '';
+  //   this.userCardDetails.reset();
+  // }
   toggleAddCardDetails() {
-    console.log("Inside Toogle ",this.showAddCardDetails)
+    console.log("Inside Toggle ", this.showAddCardDetails)
     this.showAddCardDetails = !this.showAddCardDetails;
-    console.log("After toogling", this.showAddCardDetails);
+    console.log("After toggling", this.showAddCardDetails);
     this.addCardError = '';
     this.userCardDetails.reset();
   }

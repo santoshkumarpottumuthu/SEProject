@@ -383,4 +383,19 @@ h2, h3, h4 {
   margin-top: 40px;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 1000; /* Ensure the overlay is above other content */
+  display: none; /* Initially hidden */
+}
+
+.blur-background {
+  filter: blur(5px); /* Adjust blur intensity as needed */
+}
+
 
