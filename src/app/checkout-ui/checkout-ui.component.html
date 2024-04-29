@@ -1,7 +1,8 @@
 <app-header></app-header>
 <div class="checkoutContainerMain" [class.loading]="loading">
     <form>
-      <div class="MovieDetailsDiv">
+      <div class="detailsContainers">
+      <div class="bookingDetails">
         <h1>Booking Details</h1>
         <p>Movie: <span>{{movieDetailsDataFromBuy.movieName}}</span></p>
         <p>Show Date: <span>{{movieDetailsDataFromBuy.bookingDate}}</span></p>
@@ -9,15 +10,38 @@
         <p>Seats Selected: <span>{{movieDetailsDataFromBuy.seats}}</span></p>
         
       </div>
-        
+        <!-- Promo Code -->
+        <div class="promoCodeDetails">
+          <div class="promoCode" [formGroup]="promoCodeForm">
+              <h1>Promo Code</h1>
+              <div class="mb-3">
+                <label for="promoCode" class="form-label">Enter Promo Code</label>
+                <div class="inpBtnFlx">
+                  <input type="text" class="form-control width35per" id="promoCode" formControlName="promoCode">
+                  <button class="addBtn" (click)="checkIfPromoCodeValid()">Apply</button>
+                </div>
+                <!-- Success message div -->
+                <div *ngIf="promoCodeSuccess" class="success-message">
+                  {{ promoCodeErrorMessage }}
+              </div>
+                <!-- Error message div -->
+                  <div *ngIf="promoCodeError" class="error-message">
+                      {{ promoCodeErrorMessage }}
+                  </div>
+              </div>
+            </div>
 
+        </div>
+          
+    </div>
+        
         <!-- Payment Details -->
         <div class="paymentDetailsDiv">
           <div class="flexBtns">
               <h1>Payment Cards</h1>
               <button class="paymentBtns" (click)="toggleAddCardDetails()" [disabled]="hasReachedCardLimit()"><i class="fa fa-plus"> </i> Add a New Card</button>
           </div>
-          <div class="paymentMain">
+          <div class="paymentContainer">
             <div class="noCardsExist" *ngIf="paymentData && paymentData.length === 0">
               <p>No cards available! Please add cards to confirm your order.</p>
             </div>
@@ -124,37 +148,15 @@
                       </div>
                     </form>
                   </div>
-                </div>
+
           </div>
       </div>
-        <!-- Promo Code -->
-        <div class="promoCodeDetailsDiv">
-          <div class="promoCode" [formGroup]="promoCodeForm">
-              <h1>Promo Code</h1>
-              <div class="mb-3">
-                <label for="promoCode" class="form-label">Enter Promo Code</label>
-                <div class="inpBtnFlx">
-                  <input type="text" class="form-control width35per" id="promoCode" formControlName="promoCode">
-                  <button class="addBtn" (click)="checkIfPromoCodeValid()">Apply</button>
-                </div>
-                <!-- Success message div -->
-                <div *ngIf="promoCodeSuccess" class="success-message">
-                  {{ promoCodeErrorMessage }}
-              </div>
-                <!-- Error message div -->
-                  <div *ngIf="promoCodeError" class="error-message">
-                      {{ promoCodeErrorMessage }}
-                  </div>
-              </div>
-            </div>
+    </div>
 
-        </div>
-          
 
 
         <!-- Buttons -->
-        <button class="addBtn marR10" (click)="confirmOrder()">Confirm Order</button>
-        <button class="addBtn marR10" (click)="cancelOrder()" routerLink="/buy-tickets">Cancel Order</button>
+      
     </form>
      <!-- Popup Section -->
   <!-- <div class="popup-overlay" *ngIf="redirectToLogin">
@@ -162,13 +164,15 @@
       <h2>Select Options</h2>
     </div>
   </div> -->
+  <div class="buttonContainer">
+
+  <button class="addBtn marR10" (click)="confirmOrder()">Confirm Order</button>
+        <button class="addBtn marR10" (click)="cancelOrder()" routerLink="/buy-tickets">Cancel Order</button>
 </div>
-<!-- <div class="footerWrapper">
-    <div class="footerMain text-center">
-        <p class="footerText">
-            <span>&copy;</span> 
-            2023 Copyright. All rights reserved.
-        </p>
-    </div>
-</div> -->
+</div> 
+
+<app-footer></app-footer>
+
+ 
+
 
