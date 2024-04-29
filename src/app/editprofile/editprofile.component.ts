@@ -303,6 +303,6 @@ export class EditprofileComponent implements OnInit {
   }
 
   goHome() {
-    this.router.navigate(['/admin/home']);
+    this.router.navigate(['/home']);
   }
 }
