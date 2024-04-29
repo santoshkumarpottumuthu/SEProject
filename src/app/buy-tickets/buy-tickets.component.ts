@@ -514,6 +514,7 @@ saveTickets() {
   console.log("this.finalBookingFormData" ,this.finalBookingFormData);
   this.dataSharingService.setBookedMovieDetailsSharedData(this.movieDetails);
   this.dataSharingService.setBuyTicketSharedData(this.finalBookingFormData);
+  this.dataSharingService.setTotalTicketPrice(this.totalTicketsPrice);
   console.log('Total Tickets Price:', this.totalTicketsPrice);
 }
 

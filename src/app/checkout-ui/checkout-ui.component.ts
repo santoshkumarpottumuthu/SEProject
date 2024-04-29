@@ -42,7 +42,7 @@ export class CheckoutUiComponent {
   orderConfirmation : any;
   customerID : any;
   loading : boolean = false;
-  
+  totalTicketsPrice : any;
 
 
   constructor(private datePipe: DatePipe, private appService: appApiServices, private dataSharingService: DataSharingService,private http: HttpClient, private router: Router, private fb: FormBuilder) {
@@ -83,6 +83,12 @@ export class CheckoutUiComponent {
         this.bookingDatafromBuy = data;
         console.log("Form data in checkout from buy tickets", this.bookingDatafromBuy.value)
       });
+
+      this.dataSharingService.getTotalTicketPrice().subscribe((data) => {
+        this.totalTicketsPrice = data;
+        console.log("Total tickets price : {}", this.totalTicketsPrice);
+      });
+
       this.dataSharingService.getBookedMovieDetailsSharedData().subscribe((data) => {
         if (data && data.length > 0) {
             this.movieDetailsDataFromBuy = data[0];

@@ -10,9 +10,20 @@ export class DataSharingService {
   private ticketDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   private customerDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   private orderDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  private totalTicketPrice: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 
   constructor() {}
+
+   // Method to set shared data
+   setTotalTicketPrice(data: any) {
+    this.totalTicketPrice.next(data);
+  }
+
+  // Method to get shared data as an observable
+  getTotalTicketPrice(): Observable<any> {
+    return this.totalTicketPrice.asObservable();
+  }
 
   // Method to set shared data
   setSharedData(data: any) {
