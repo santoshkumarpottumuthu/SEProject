@@ -58,6 +58,15 @@
     <!-- Popup Section -->
   <div class="popup-overlay large-popup" *ngIf="showSeatPopup">
     <div class="popup-content">
+      <h2> Available Shows </h2>
+      <div class="show-box" *ngFor="let show of movieShowsScheduled">
+        <div class="show-details">
+          <p>Show Date : {{ show.showDate }}</p>
+          <p>Show Time: {{ getFormattedShowTime(show.showTime) }}</p>
+          <!-- Add any other details you want to display -->
+        </div>
+      </div>
+      
       <h2>Select Options</h2>
        <!-- Select Movie Date -->
        <!---
@@ -103,7 +112,7 @@
                 </div>
             </div>
             <div class="flxItems" *ngIf="!isAdult">
-                <span>CHILD: ($9.00) </span>
+                <span>Child: ($9.00) </span>
                 <div class="counter">
                     <button class="counterBtn" (click)="decrement('child')">-</button>
                     <input type="number" [(ngModel)]="childCount" min="0" class="counterInpt">

@@ -127,12 +127,69 @@ export class BuyTicketsComponent {
     console.log("movieTitle", this.movieTitle);
     this.appService.viewMovieInfo(this.movieTitle).subscribe(res => {
       if (res) {
+        console.log("Result obtained by movie name : ",res);
         this.movieList = res;
         this.schedulingMovieID = this.movieList.id;
+        console.log("this.schedulingMoveId ",this.movieList.id);
+        console.log("movieid ",res.id);
         console.log("Response In View Movie", this.movieList);
+        this.getShowsByMovie();
       }
     });
+
+ 
+    
   }
+
+  getShowsByMovie() {
+    const data = { movieID: this.schedulingMovieID };
+    console.log("data ",data);
+    this.appService.getShowBasedOnMovie(data).subscribe(
+      (response: any) => {
+        this.movieShowsScheduled = response[400];
+        this.sortShowsByDateAndTime();
+  
+        // Update showTime values to formatted ones
+        const formattedShows = this.movieShowsScheduled.map((show: any) => {
+          return {
+            ...show,
+            showTimeFormatted: this.getFormattedShowTime(show.showTime)
+          };
+        });
+  
+        this.movieShowsScheduled = formattedShows;
+  
+        console.log("Shows based on Movie", this.movieShowsScheduled);
+      },
+      (error) => {
+        console.error('Error:', error);
+      });
+  }
+
+  sortShowsByDateAndTime() {
+    this.movieShowsScheduled.sort((a: any, b: any) => {
+      // Sort by showDate
+      const dateComparison = new Date(a.showDate).getTime() - new Date(b.showDate).getTime();
+      if (dateComparison !== 0) {
+        return dateComparison;
+      }
+  
+      // If showDate is the same, sort by showTime
+      return a.showTime - b.showTime; // Compare as numbers
+    });
+  }
+
+  getFormattedShowTime(showTime: number): string {
+    switch (showTime) {
+      case 10: return '10:00 AM';
+      case 13: return '1:00 PM';
+      case 16: return '4:00 PM';
+      case 19: return '7:00 PM';
+      case 22: return '10:00 PM';
+      default: return '';
+    }
+  }
+  
 
   selectSeat(seat: string) {
     const index = this.selectedSeats.indexOf(seat);
