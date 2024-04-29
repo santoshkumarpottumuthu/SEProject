@@ -24,7 +24,7 @@
 }
 
 .addButton {
-    background-color: #011631; /* Dark color for button */
+    background-color: #93a9e1; /* Dark color for button */
     color: #FFF;
     padding: 12px 20px;
     border: none;
@@ -38,3 +38,48 @@
 .addButton:hover {
     background-color: #999999; /* Grey color for hover */
 }
+
+.activeOrdersList {
+    margin-top: 20px;
+  }
+  
+  .activeOrdersList h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .activeOrderDetailsDiv {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .orderContainer {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .orderDetails {
+    padding-bottom: 10px;
+  }
+  
+  .orderDetails h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .orderDetails p {
+    margin: 5px 0;
+  }
+  
+  .noOrders {
+    padding: 10px;
+    background-color: #93a9e1;
+    border-radius: 5px;
+  }
+  
+  .noOrders p {
+    color: #010e1e;
+    font-size: 16px;
+    font-weight: bold;
+  }

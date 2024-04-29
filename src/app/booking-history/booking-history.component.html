@@ -4,14 +4,16 @@
         <h2>Active Orders</h2>
         <div class="activeOrderDetailsDiv">
             <div *ngIf="activeOrders.length > 0; else noActiveOrders">
-                <div class="orderDetails" *ngFor="let order of activeOrders; let i = index">
-                    <h3>Order {{ orderCounter + i }}</h3>
-                    <!-- <p>Show Time: {{ order.movie.movieTitle }} </p> -->
-                    <p> Movie Name: {{ order.movie.movieTitle }}</p>
-                    <p>Booking Date: {{ order.booking.bookingDate }}</p>
-                    <p>Total Price: ${{ order.booking.totalPrice | number:'1.2-2' }}</p>
-                    <p>Seat Numbers: {{ getSeatNumbers(order.tickets) }}</p> 
-                    <p>Ticket Types: {{ getTicketTypes(order.tickets) }}</p>
+                <div class="orderContainer" *ngFor="let order of activeOrders; let i = index">
+                    <div class="orderDetails">
+                        <h3>Order {{ orderCounter + i }}</h3>
+                        <!-- <p>Show Time: {{ order.movie.movieTitle }} </p> -->
+                        <p> Movie Name: {{ order.movie.movieTitle }}</p>
+                        <p>Booking Date: {{ order.booking.bookingDate }}</p>
+                        <p>Total Price: ${{ order.booking.totalPrice | number:'1.2-2' }}</p>
+                        <p>Seat Numbers: {{ getSeatNumbers(order.tickets) }}</p> 
+                        <p>Ticket Types: {{ getTicketTypes(order.tickets) }}</p>
+                    </div>
                 </div>
             </div>
             <ng-template #noActiveOrders>
