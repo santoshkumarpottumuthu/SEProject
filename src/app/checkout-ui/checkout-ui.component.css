@@ -1,113 +1,23 @@
-/* Main container for checkout */
-html, body {
-  height: 100%;
-  margin: 0;
+.paymentCardDiv {
+  display: flex; /* This will line up the child elements in a row */
+  flex-wrap: wrap; /* This will allow the items to wrap onto the next line if there isn't enough space */
+  justify-content: flex-start; /* Align children to the start of the container */
+  gap: 10px; /* This adds space between the cards */
+  margin-bottom: 20px; /* Adds space below each row of cards */
 }
 
-.checkoutContainerMain {
-  display: flex;
-  flex-direction: column;
-  min-height: 80vh; 
-  max-width: 960px; /* Adjust width as needed */
-  margin: 30px auto;
-  padding: 20px;
-  background: #f3f3f3; /* Background color */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.dsplyFlxRadio {
+  flex: 1 0 auto; /* This will allow the radio buttons and labels to grow and shrink as needed */
 }
 
-/* Container to hold details side by side */
-.detailsContainers {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+.col-md-12.pad-0.dsplyFlxRadio {
+  width: 100%; /* This will ensure that the input and label take up the full width of their container */
+  margin-bottom: 10px; /* Adds space between each card */
 }
 
-/* Individual containers for booking and promo code */
-.bookingDetails, .promoCodeDetails {
-  flex: 1;
-  padding: 15px;
-  background-color:  rgba(173, 216, 230, 0.3);
-  border-radius: 8px;
-  margin-right: 10px; /* Adds spacing between the columns, remove from promoCodeDetails if necessary */
-}
-
-/* Ensures the last container doesn't have a margin to the right */
-.detailsContainers > :last-child {
-  margin-right: 0;
-}
-
-.paymentDetailsDiv {
-  background-color: rgba(173, 216, 230, 0.3);; /* Light grey background for contrast */
-  padding: 20px;
-  border-radius: 8px; /* Match border radius with other sections */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  margin-top: 20px; /* Separate from the details above */
-}
-
-.paymentBtns {
-  background-color: #011631; /* Lighter blue for a friendlier feel */
-  color: white;
-  border: none;
-  border-radius: 4px; /* Slightly rounded corners for the buttons */
-  padding: 10px 15px;
-  margin-right: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.paymentBtns:hover {
-  background-color: #09489c; /* Darken button on hover for interaction feedback */
-}
-
-/* Style for the 'Add a New Card' button */
-.addCardBtn {
-  display: inline-block; /* Align with the text */
-  margin-left: 10px; /* Spacing from the text */
-  vertical-align: middle; /* Align vertically with text */
-}
-
-.addCardBtn i {
-  margin-right: 5px; /* Space between the icon and the text */
-}
-
-/* Improved form input styling for clarity */
-input[type='text'], input[type='number'] {
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 4px; /* Rounded corners to match buttons */
-  padding: 10px; /* Spacious padding for input */
-  width: 100%; /* Full width inputs */
-  box-sizing: border-box; /* Border included in width */
-  margin-bottom: 10px; /* Space between form fields */
-}
-
-/* Responsive adjustments */
+/* Adjust the size of the card to ensure they fit within the container and align properly */
 @media (max-width: 768px) {
-  .detailsContainers {
-    flex-direction: column;
+  .dsplyFlxRadio {
+    flex-basis: 100%; /* On smaller screens, the cards will stack vertically */
   }
-
-  .bookingDetails, .promoCodeDetails, .paymentContainer {
-    width: 100%; /* Full width on smaller screens */
-    margin-bottom: 20px;
-  }
-}
-button {
-  background-color: #011631; /* Lighter blue for a friendlier feel */
-  color: white;
-  border: none;
-  border-radius: 4px; /* Slightly rounded corners for the buttons */
-  padding: 10px 15px;
-  margin-right: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-  cursor: pointer; /* Indicates a button */
-}
-
-button:hover {
-  background-color: #0c3f83; /* Darken button on hover for interaction feedback */
-}
-.buttonContainer {
-  text-align: center; /* Centers inline elements */
-  padding: 20px; /* Adds spacing inside the container */
 }
