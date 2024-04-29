@@ -1,355 +1,139 @@
-.container {
-  width: 80%;
-  margin: 2em auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  background-color: #ffffff;
+/* Main container for checkout */
+html, body {
+  height: 100%;
+  margin: 30;
 }
 
-.form-group {
-  margin-bottom: 1em;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5em;
-}
-
-
-
-.checkoutContainerMain
-{
-  width: 800px;
-  background: #3180ac3d;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px 5px #f2f7fa;
+.checkoutContainerMain {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh; 
+  max-width: 700px; /* Adjust width as needed */
   margin: 30px auto;
-  padding: 15px;
-}
-.paymentCardDiv
-{
-  background: #fff;
-  padding: 10px 10px 0px 10px;
-  border-radius: 5px;
-  height: 60px;
-  width: 300px;
-  margin: 10px 0;
-}
-.addBtn
-{
-  color: #FFF;
-  background-color: #3180AC;
-  padding: 10px 15px;
-  text-align: center;
-  border: unset;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-.cardDetails {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid #ccc;
   padding: 20px;
-  z-index: 1;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-.cardDetailsContent 
-{
-  color: #3180AC; 
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  width: 60%;
-  position: relative;
-  margin: auto;
-}
-.cardDetailsContent h2
-{
-  border-bottom: 1px solid #3180AC;
-  font-weight: 800;
-  margin: 5px;
-  /* padding: 5px; */
-}
-.supClass {
-  color: #f62e2e;
-  font-size: 90%;
-  top: -0.3em;
-}
-.paymentBtns
-{
-  color: #FFF;
-  background-color: #3180AC;
-  padding: 5px 10px;
-  text-align: center;
-  border: unset;
-  margin-left: 15px;
-  border-radius: 7px;
-  margin-bottom: 15px;
-}
-.paymentCardDiv
-{
-  background: #fff;
-  padding: 10px 10px 0px 10px;
-  border-radius: 5px;
-  height: 80px;
-}
-.paymentBtns
-{
-  color: #FFF;
-  background-color: #3180AC;
-  padding: 5px 10px;
-  text-align: center;
-  border: unset;
-  margin-left: 15px;
-  border-radius: 7px;
-  margin-bottom: 15px;
-}
-.flexBtns
-{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cardDetailsOnly
-{
-  width: 40%;
-}
-.billingAddressDetails
-{
-  width: 45%;
-}
-.paymentBtns[disabled] {
-  background-color: #ccc; 
-  color: #3180AC; 
-  cursor: not-allowed; 
-  opacity: 0.9; 
-}
-.paymentBillingDetails
-{
-  display: flex;
-  justify-content: space-between;
-}
-.paymentBillingDetails h4
-{
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.dsplyFlx
-{
-  display: flex;
-}
-.dsplyFlxRadio
-{
-  display: flex;
-  align-items: center;
-}
-.cardRadioBtn
-{
-margin: 0 7px;
-}
-.marB0
-{
-  margin-bottom: 0;
-}
-.promoCode
-{
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.inpBtnFlx
-{
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-.inpBtnFlx button
-{
-  margin-bottom: 0;
-  margin-left: 10px;
-}
-.width35per
-{
-  width: 35%;
-}
-.marR10
-{
-  margin-right: 10px;
-}
-.success-message
-{
-  color: green;
-  font-weight: bold;
-}
-.error-message
-{
-  color: #f62e2e;
-  font-weight: bold;
-}
-
-
-/* Footer CSS */
-.footerWrapper
-{
-  /* position: relative; */
-  /* bottom: 0; */
-  background-color: #3180AC;
-  height: 60px;
-  width: 100%;
-  color: #fff;
-  position: relative;
-  bottom: 0;
-}
-.footerMain
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.footerText
-{
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0;
-}
-/* Style the confirmation modal */
-.confirmation-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensure it's above other content */
-}
-
-.confirmation-content {
-  background-color: #fff;
-  position: relative;
-  border-radius: 5px;
-  padding: 20px;
-  color: green;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.confirmation-text {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.confirmation-text-2
-{
-  color: #000;
-  margin-bottom: 20px;
-}
-/* Close Icon */
-.close-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* Display the modal when isAccountCreationSuccessful is true */
-.signUp-container.ng-reflect-isAccountCreationSuccessful .confirmation-modal {
-  display: flex;
-}
-.error-content {
-  background-color: #fff;
-  position: relative;
-  border-radius: 5px;
-  padding: 20px;
-  color: red;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: #fff;
-  padding: 20px;
+  background: #f3f3f3; /* Background color */
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-.MovieDetailsDiv ,.paymentDetailsDiv
-{
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom:  1px solid #3180AC;
-}
-.MovieDetailsDiv h1,  .promoCodeDetailsDiv h1
-{
-  font-weight: 800;
-  font-size: 16px;
-}
-.MovieDetailsDiv h1 p
-{
-  font-weight: 600;
-}
-.MovieDetailsDiv h1 p span
-{
-  font-weight: normal;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.noCardsExist
-{
-  font-weight: 800;
-  color: #f62e2e;
-  margin: 10px;
-  padding: 5px;
-}
-.promoCodeDetailsDiv
-{
-  margin-bottom: 10px;
-  padding-bottom: 5px;
+/* Container to hold details side by side */
+.detailsContainers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-/* Loader styles */
-.loader {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(255, 255, 255, 0.8);
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 9999;
+/* Individual containers for booking and promo code */
+.bookingDetails, .promoCodeDetails {
+  flex: 1;
+  padding: 15px;
+  background-color:  rgba(173, 216, 230, 0.3);
+  border-radius: 8px;
+  margin-right: 10px; /* Adds spacing between the columns, remove from promoCodeDetails if necessary */
 }
 
-.loader::after {
-content: '';
-border: 4px solid #3498db;
-border-radius: 50%;
-border-top: 4px solid #fff;
-width: 30px;
-height: 30px;
-animation: spin 1s linear infinite;
+/* Ensures the last container doesn't have a margin to the right */
+.detailsContainers > :last-child {
+  margin-right: 0;
 }
 
-@keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+.paymentDetailsDiv {
+  background-color: rgba(173, 216, 230, 0.3);; /* Light grey background for contrast */
+  padding: 20px;
+  border-radius: 8px; /* Match border radius with other sections */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 30px; /* Separate from the details above */
+}
+
+.paymentBtns {
+  background-color: #011631; /* Lighter blue for a friendlier feel */
+  color: white;
+  border: none;
+  border-radius: 4px; /* Slightly rounded corners for the buttons */
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.paymentBtns:hover {
+  background-color: #09489c; /* Darken button on hover for interaction feedback */
+}
+
+/* Style for the 'Add a New Card' button */
+.addCardBtn {
+  display: inline-block; /* Align with the text */
+  margin-left: 10px; /* Spacing from the text */
+  vertical-align: middle; /* Align vertically with text */
+}
+
+.addCardBtn i {
+  margin-right: 5px; /* Space between the icon and the text */
+}
+
+/* Improved form input styling for clarity */
+input[type='text'], input[type='number'] {
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 4px; /* Rounded corners to match buttons */
+  padding: 10px; /* Spacious padding for input */
+  width: 100%; /* Full width inputs */
+  box-sizing: border-box; /* Border included in width */
+  margin-bottom: 10px; /* Space between form fields */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .detailsContainers {
+    flex-direction: column;
+  }
+
+  .bookingDetails, .promoCodeDetails, .paymentContainer {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px;
+  }
+}
+button {
+  background-color: #011631; /* Lighter blue for a friendlier feel */
+  color: white;
+  border: none;
+  border-radius: 4px; /* Slightly rounded corners for the buttons */
+  padding: 10px 15px;
+  margin-right: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  cursor: pointer; /* Indicates a button */
+}
+
+button:hover {
+  background-color: #0c3f83; /* Darken button on hover for interaction feedback */
+}
+.buttonContainer {
+  text-align: center; /* Centers inline elements */
+  padding: 20px; /* Adds spacing inside the container */
+}
+
+.paymentCardDiv {
+  display: flex; /* This will line up the child elements in a row */
+  flex-wrap: wrap; /* This will allow the items to wrap onto the next line if there isn't enough space */
+  justify-content: flex-start; /* Align children to the start of the container */
+  gap: 10px; /* This adds space between the cards */
+  margin-bottom: 20px; /* Adds space below each row of cards */
+}
+
+.dsplyFlxRadio {
+  flex: 1 0 auto; /* This will allow the radio buttons and labels to grow and shrink as needed */
+}
+
+.col-md-12.pad-0.dsplyFlxRadio {
+  width: 100%; /* This will ensure that the input and label take up the full width of their container */
+  margin-bottom: 10px; /* Adds space between each card */
+}
+
+/* Adjust the size of the card to ensure they fit within the container and align properly */
+@media (max-width: 768px) {
+  .dsplyFlxRadio {
+    flex-basis: 100%; /* On smaller screens, the cards will stack vertically */
+  }
 }
