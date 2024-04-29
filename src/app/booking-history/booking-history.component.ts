@@ -104,4 +104,8 @@ export class BookingHistoryComponent implements OnInit {
       }
     });
   }
+
+  goHome() {
+    this.router.navigate(['']);
+  }
 }

@@ -22,3 +22,19 @@
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
+.addButton {
+    background-color: #011631; /* Dark color for button */
+    color: #FFF;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+    margin: 20px auto 0; /* Updated margin to add space below the button */
+}
+
+.addButton:hover {
+    background-color: #999999; /* Grey color for hover */
+}
