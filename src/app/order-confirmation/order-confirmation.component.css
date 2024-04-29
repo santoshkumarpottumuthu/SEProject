@@ -37,7 +37,7 @@ p {
     font-size: 1.2em;
     margin: 10px 0;
     color: #010e1e;
-    
+    text-align: left;
 }
 
 h2 {
@@ -48,25 +48,27 @@ h2 {
 }
 
 .order-summary {
-    margin: 2em 0;
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
 }
 
-.order-summary p {
-    margin: 0;
+.order-info {
+    margin: 10px 0;
 }
 
-.order-summary p span:first-child {
-    display: inline-block;
-    width: 150px; /* Adjust as needed */
-    text-align: left;
+.order-info:first-child {
+    margin-top: 0;
+}
+
+.order-info:last-child {
+    margin-bottom: 0;
+}
+
+.order-info::before {
+    content: attr(data-label);
     font-weight: bold;
-}
-
-.order-summary p span:last-child {
-    display: inline-block;
-    text-align: right;
-    margin-left: 20px; /* Adjust as needed */
-    min-width: 200px; /* Adjust as needed */
 }
 
 .addBtn {
@@ -85,25 +87,4 @@ h2 {
 
 .addBtn:hover {
     background-color: #011631;
-}
-
-.order-summary {
-    margin: 2em 0;
-    padding: 1.5em;
-    border: 1px solid #565151;
-    border-radius: 8px;
-    text-align: left; /* Align text to the left */
-}
-
-.order-summary p {
-    margin: 10px 0; /* Adjust margin as needed */
-    line-height: 1.6; /* Adjust line height as needed */
-}
-
-.order-summary p span:first-child {
-    font-weight: bold;
-}
-
-.order-summary p span:last-child {
-    float: right;
 }
