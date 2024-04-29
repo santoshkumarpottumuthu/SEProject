@@ -5,7 +5,7 @@
         <h2>You're all set! See you soon</h2>
 
         <div class="order-summary">
-            <p class="order-info" data-label="Booking Number:"> {{ bookingData?.bookingNumber }}</p>
+            <p class="order-info" data-label="Booking Number:"> {{ orderConfirmationData?.booking?.bookingId }}</p>
             <p class="order-info" data-label="Movie:"> {{ orderConfirmationData?.movie?.movieTitle }}</p>
             <p class="order-info" data-label="Show Date:"> {{ orderConfirmationData?.show?.showDate }}</p>
             <p class="order-info" data-label="Show Time:"> {{ getFormattedShowTime(orderConfirmationData?.show?.showTime) }}</p>
