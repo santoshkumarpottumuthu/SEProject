@@ -166,6 +166,14 @@ export class BuyTicketsComponent {
       });
   }
 
+onTimeChange(newTime: string) {
+    this.selectedTime = newTime;
+    console.log("New selected time:", this.selectedTime);
+    // Additional logic here if necessary
+}
+
+
+
   sortShowsByDateAndTime() {
     this.movieShowsScheduled.sort((a: any, b: any) => {
       // Sort by showDate

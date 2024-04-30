@@ -84,10 +84,14 @@
         <!-- Select Movie Time -->
         <div class="select-time customSelectTime">
             <label for="movie-time">Select Show Time:</label>
-            <select class="form-control marR5 width59per" id="movie-time" name="movie-time" [(ngModel)]="selectedTime" required>
-              <!-- <option value="1:00 PM">1:00 PM</option> -->
-                <option *ngFor="let show of movieShowsScheduled" [value]="show.showTime">{{ show.showTimeFormatted }}</option>
-            </select>
+            <select class="form-control marR5 width59per" id="movie-time" name="movie-time" [(ngModel)]="selectedTime" required (ngModelChange)="onTimeChange($event)">
+              <option value=""  selected>Select a time</option>
+              <option *ngFor="let show of movieShowsScheduled" [value]="show.showTime">
+                  {{ show.showTimeFormatted }}
+              </option>
+          </select>
+          
+          
         </div>
 
     <!-- Select User -->
