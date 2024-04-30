@@ -62,6 +62,7 @@ export class AdminmanageusersComponent implements OnInit {
       (response: any) => {
         console.log("Admin successfully deleted", response);
         this.getAllAdmins();
+        alert("Succesfully deleted the admin");
         this.router.navigate(['/admin/home']);
       },
       (error) => {
