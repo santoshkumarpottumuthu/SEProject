@@ -112,7 +112,8 @@ export class EditprofileComponent implements OnInit {
         for (var i = 0; i < this.paymentData.length; i++) {
           var card = this.paymentData[i];
           var maskedNumber = card.cardNumber.replace(/\d(?=\d{4})/g, '*');
-          card.cardNumber = maskedNumber; // Update the card number to the masked version
+          // card.cardNumber = maskedNumber; // Update the card number to the masked version
+          card.maskedNumber = maskedNumber;
         }
   
         // console.log("trimmed card : ", trimmedCard);
