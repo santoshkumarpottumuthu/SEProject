@@ -154,7 +154,7 @@ export class CheckoutUiComponent {
   }
   hasReachedCardLimit() {
     if(this.paymentData && this.paymentData.length >=3){
-      alert("You have reached the maximum allowed cards, please delete one from them before adding a new one.");
+      // alert("You have reached the maximum allowed cards, please delete one from them before adding a new one.");
     }
     return this.paymentData && this.paymentData.length >= 3;
   }
