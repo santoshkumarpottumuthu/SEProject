@@ -74,8 +74,13 @@ export class EditprofileComponent implements OnInit {
 
     // Optionally, you can add logic to check for user authentication or other conditions before fetching data.
   }
+  
   hasReachedCardLimit() {
-    return this.paymentData.length >= 3;
+    console.log("Here limit mei");
+    // if(this.paymentData && this.paymentData.length >=3){
+    //   alert("You have reached the maximum allowed cards, please delete one from them before adding a new one.");
+    // }
+    return this.paymentData && this.paymentData.length >= 3;
   }
   
 
@@ -104,8 +109,13 @@ export class EditprofileComponent implements OnInit {
         this.cardUserID = this.customerData.userID;
         console.log("card user id", this.cardUserID);
         this.paymentData = this.userData.cardDetails;
-        // const trimmedCard = this.paymentData.cardNumber.substring(this.paymentData.cardNumber.length - 4);
-
+        for (var i = 0; i < this.paymentData.length; i++) {
+          var card = this.paymentData[i];
+          var maskedNumber = card.cardNumber.replace(/\d(?=\d{4})/g, '*');
+          card.cardNumber = maskedNumber; // Update the card number to the masked version
+        }
+  
+        // console.log("trimmed card : ", trimmedCard);
         console.log("Card Data", this.paymentData);
         this.showCardDetails = new Array(this.paymentData.length).fill(false);
 
@@ -237,10 +247,9 @@ export class EditprofileComponent implements OnInit {
         console.log("popup status before:", this.showAddCardDetails);
         this.showAddCardDetails = false;
         console.log("popup status after:", this.showAddCardDetails);
-      // this.toggleAddCardDetails();
       this.paymentData = data;
-      // this.toggleAddCardDetails();
       console.log("Card Data", this.paymentData);
+      alert("Card added successfully!");
      
       }
       else if (data[208])
@@ -248,7 +257,7 @@ export class EditprofileComponent implements OnInit {
         this.showAddCardError  = true;
         this.addCardError  = "Card already exists";
         this.userCardDetails.reset();
-        // this.toggleAddCardDetails();
+        alert("Card already exists!");
       }
       
     });
