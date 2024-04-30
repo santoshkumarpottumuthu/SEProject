@@ -75,10 +75,11 @@ export class CheckoutUiComponent {
     this.firstNameUser = localStorage.getItem('userFirstName');
     this.lastNameUser = localStorage.getItem('userLastName');
     const userID = localStorage.getItem('userID');
-    if (userID !== null) {
-      this.customerID = +userID;
-      console.log("cust;", this.customerID);
-    }
+    console.log("Setting the userId")
+    // if (userID !== null) {
+    this.customerID = userID;
+    console.log("cust;", this.customerID);
+    // }
     this.dataSharingService.getBuyTicketSharedData().subscribe((data) => {
         this.bookingDatafromBuy = data;
         console.log("Form data in checkout from buy tickets", this.bookingDatafromBuy.value)
@@ -152,6 +153,9 @@ export class CheckoutUiComponent {
     });
   }
   hasReachedCardLimit() {
+    if(this.paymentData && this.paymentData.length >=3){
+      alert("You have reached the maximum allowed cards, please delete one from them before adding a new one.");
+    }
     return this.paymentData && this.paymentData.length >= 3;
   }
   
@@ -229,7 +233,7 @@ export class CheckoutUiComponent {
     this.loading = true;
     const cardUsedforPayment = this.selectedPaymentCardID;
     this.bookingDatafromBuy.value['booking']['paymentId'] = cardUsedforPayment;
-  
+    this.bookingDatafromBuy.value['booking']['customerId'] = this.customerID;
     // Check the validity of the promo code again
     const promoCodeValue = this.promoCodeForm.get('promoCode')?.value;
     if (promoCodeValue && this.promoCodeSuccess) {

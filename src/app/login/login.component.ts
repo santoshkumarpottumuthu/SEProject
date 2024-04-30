@@ -66,15 +66,7 @@ export class LoginComponent {
           {
             this.verificationUnSuccessful = false;
             this.isLoginSuccessful = true;
-            if(localStorage.getItem("redirectToCheckOutOnLogin") === "true"){
-              console.log("Redirecting the user to checkout from login");
-              localStorage.removeItem("redirectToCheckOutOnLogin");
-              this.router.navigate(['/checkout']);
-            }
-            else{
-              this.router.navigate(['/home']);
-            }
-            
+        
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('userFirstName', response[200].customer.firstName);
             localStorage.setItem('userLastName', response[200].customer.lastName);
@@ -83,6 +75,7 @@ export class LoginComponent {
             localStorage.setItem('userPassword', response[200].customer.password);
             console.log("Logged in firstName", response[200].customer.email);
             console.log("Logged in password", response[200].customer.password);
+            
             if (this.rememberMe) {
               localStorage.setItem('rememberMeEmailID', response[200].customer.email);
               console.log('Remember Me is checked');
@@ -90,6 +83,22 @@ export class LoginComponent {
               
               console.log('Remember Me is not checked');
             }
+            if(localStorage.getItem("redirectToCheckOutOnLogin") === "true"){
+              console.log("Redirecting the user to checkout from login");
+              localStorage.removeItem("redirectToCheckOutOnLogin");
+              const userId = localStorage.getItem("redirectedUserId");
+              if(userId!==null){
+                localStorage.setItem("userID",userId);
+
+              }
+              this.router.navigate(['/checkout']);
+            }
+            else{
+              this.router.navigate(['/home']);
+            }
+            
+            
+          
           } 
           else {
             this.isLoginUnsuccessful = true;

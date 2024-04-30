@@ -417,6 +417,7 @@ onProceedToCheckout() {
     console.log("Cannot continue")
     console.log("Setting the value");
     localStorage.setItem("redirectToCheckOutOnLogin",'true');
+    localStorage.setItem("redirectedUserId","2");
   }
   else
   { 
